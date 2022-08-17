@@ -1,0 +1,12 @@
+[Unit]
+Description=uWSGI
+After=network-online.target
+
+[Service]
+ExecStart=/home/offv/uwsi/bin/uwsgi
+Restart=always
+RestartSec=1min
+StartLimitAction=reboot
+
+[Install]
+WantedBy=multi-user.target
