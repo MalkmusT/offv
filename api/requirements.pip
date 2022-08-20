@@ -4,3 +4,10 @@ Jinja2
 MarkupSafe
 python-dotenv
 Werkzeug
+openfoodfacts
+Requests
+psycopg2
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Script==2.0.6
+pyyaml

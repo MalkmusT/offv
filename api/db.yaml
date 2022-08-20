@@ -1,0 +1,7 @@
+db:
+  type: postgresl
+  host: localhost
+  port: 5432
+  user: offv
+  password: offv
+  database: offv 
