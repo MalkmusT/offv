@@ -3,9 +3,15 @@ env:
 	env/bin/pip install -r api/requirements.pip
 
 
+init: env
+	env/bin/flask db upgrade
+
+db_migrate: env
+	env/bin/flask db migrate
+
+
 build: env
 	npm run build
-
 
 package: build
 	tar cf release.tar.gz build/ 
@@ -22,3 +28,5 @@ clean:
 	rm -rf api/__pycache__
 	rm -rf build/
 
+dist-clean: clean
+	bin/db_clean

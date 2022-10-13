@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+echo "drop database offv;" | psql -h localhost -U offv postgres
+echo "create database offv;" | psql -h localhost -U offv postgres
+

@@ -1,5 +1,5 @@
 db:
-  type: postgresl
+  type: postgresql
   host: localhost
   port: 5432
   user: offv
