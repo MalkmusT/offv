@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
+
 from flask import Blueprint 
-from . import db
+from .. import db
 
 auth = Blueprint('auth', __name__)
 

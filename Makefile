@@ -1,6 +1,12 @@
 env: 
 	python3 -m venv env
+	env/bin/pip install -U setuptools
+	env/bin/pip install -U pip
 	env/bin/pip install -r api/requirements.pip
+
+
+test: env
+	env/bin/flask test
 
 
 init: env

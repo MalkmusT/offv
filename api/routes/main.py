@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
+
+
 from flask import Blueprint 
-from . import db, create_app
+from .. import db, create_app
 
 import time
 
@@ -10,6 +13,7 @@ main = Blueprint('main', __name__)
 @main.route('/api/time')
 def get_current_time():
     return {'time': time.time()}
+
 @main.route('/api/search/<term>')
 def get_search_result():
     return { 'results' : [ 
