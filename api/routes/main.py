@@ -2,7 +2,7 @@
 
 
 from flask import Blueprint 
-from .. import db, create_app
+from offv import db, create_app
 
 import time
 

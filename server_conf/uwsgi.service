@@ -3,10 +3,18 @@ Description=uWSGI
 After=network-online.target
 
 [Service]
-ExecStart=/home/offv/uwsi/bin/uwsgi
+ExecStart=/home/offv/uswgi/bin/uwsgi --emperor /home/offv/available/
+
+RuntimeDirectory=uwsgi
 Restart=always
-RestartSec=1min
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+User=offv
+Restart=always
 StartLimitAction=reboot
+
 
 [Install]
 WantedBy=multi-user.target

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from .. import db
+from offv import db
 from sqlalchemy.dialects.postgresql import JSON
 
-from .user import User
-from .search import Result
+from offv.models.user import User
+from offv.models.search import Result

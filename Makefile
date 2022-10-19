@@ -5,8 +5,11 @@ env:
 	env/bin/pip install -r api/requirements.pip
 
 
-test: env
-	env/bin/flask test
+test-env: env
+	env/bin/pip install -r api/test-requirements.pip
+
+test: test-env
+	env/bin/pytest
 
 
 init: env
