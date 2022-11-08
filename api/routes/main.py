@@ -4,6 +4,8 @@
 from flask import Blueprint 
 from offv import db, create_app
 
+from .models import Result, User
+
 import time
 
 main = Blueprint('main', __name__)
@@ -16,6 +18,7 @@ def get_current_time():
 
 @main.route('/api/search/<term>')
 def get_search_result():
+    Result.query.all()
     return { 'results' : [ 
     { 'id' : 1, 'text' : 'AA' }, 
     { 'id' : 2, 'text' : 'AB' }, 
