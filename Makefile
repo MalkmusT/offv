@@ -2,12 +2,12 @@ env:
 	python3 -m venv env
 	env/bin/pip install -U setuptools
 	env/bin/pip install -U pip
-	env/bin/pip install -r offv_api/requirements.pip
-	env/bin/pip install -e offv_api
+	env/bin/pip install -r api/requirements.pip
+	env/bin/pip install -e .
 
 
 test-env: env
-	env/bin/pip install -r offv_api/test-requirements.pip
+	env/bin/pip install -r api/test-requirements.pip
 
 test: test-env
 	env/bin/pytest
@@ -35,7 +35,7 @@ deploy: package
 clean:
 	rm -f release.tar.gz
 	rm -rf env/
-	rm -rf api/__pycache__
+	rm -rf offv_api/__pycache__
 	rm -rf build/
 
 dist-clean: clean

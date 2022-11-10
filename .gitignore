@@ -5,11 +5,13 @@
 
 env
 __pycache__
+offv.egg-info/
 
 # dependencies
 */node_modules
 frontend/.pnp
 .pnp.js
+
 
 # testing
 /coverage

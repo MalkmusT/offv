@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from .. import db
+from api import db
 from sqlalchemy.dialects.postgresql import JSON
 
 class User(db.Model):
@@ -11,6 +11,6 @@ class User(db.Model):
     name = db.Column(db.String(1000))
 
     def __init__( self, email, password, name ):
-        self.email= emailf
+        self.email= email
         self.password = password
         self.name = name

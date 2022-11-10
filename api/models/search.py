@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .. import db
+from api import db
 from sqlalchemy.dialects.postgresql import JSON
 
 

@@ -16,10 +16,10 @@ def create_app():
 
     db.init_app(app)
     
-    from offv.routes import register_routes
+    from api.routes import register_routes
     register_routes( app )
 
-    from offv.models import User, Result
+    from api.models import User, Result
     migrate = Migrate(app, db)
 
     return app
