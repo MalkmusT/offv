@@ -7,8 +7,8 @@ env
 __pycache__
 
 # dependencies
-/node_modules
-/.pnp
+*/node_modules
+frontend/.pnp
 .pnp.js
 
 # testing

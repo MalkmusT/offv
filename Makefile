@@ -2,11 +2,12 @@ env:
 	python3 -m venv env
 	env/bin/pip install -U setuptools
 	env/bin/pip install -U pip
-	env/bin/pip install -r api/requirements.pip
+	env/bin/pip install -r offv_api/requirements.pip
+	env/bin/pip install -e offv_api
 
 
 test-env: env
-	env/bin/pip install -r api/test-requirements.pip
+	env/bin/pip install -r offv_api/test-requirements.pip
 
 test: test-env
 	env/bin/pytest
@@ -20,7 +21,7 @@ db_migrate: env
 
 
 build: env
-	npm run build
+	cd frontend; npm run build
 
 package: build
 	tar cf release.tar.gz build/ 
