@@ -2,9 +2,9 @@
 
 
 from flask import Blueprint 
-from offv import db, create_app
+from api import db, create_app
 
-from .models import Result, User
+from api.models import Result, User
 
 import time
 

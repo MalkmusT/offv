@@ -5,7 +5,6 @@ env:
 	env/bin/pip install -r api/requirements.pip
 	env/bin/pip install -e .
 
-
 test-env: env
 	env/bin/pip install -r api/test-requirements.pip
 
@@ -19,14 +18,25 @@ init: env
 db_migrate: env
 	env/bin/flask db migrate
 
+build-frontend: 
+	cd frontend; npm install; npm run build
 
-build: env
+
+test_frontend:
+	cd frontend; npm test
+
+run_frontend: build-frontend
 	cd frontend; npm run build
+
+run_api:
+	env/bin/flask run
+
+build: build-frontend env
+
 
 package: build
 	tar cf release.tar.gz build/ 
 	tar rf release.tar.gz api/
-
 
 deploy: package
 	scp release.tar.gz offv@verena-tobias.de:~/

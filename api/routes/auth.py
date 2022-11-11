@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Blueprint 
-from offv import db
+from api import db
 
 auth = Blueprint('auth', __name__)
 

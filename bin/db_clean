@@ -1,6 +1,9 @@
 #!/bin/bash
 
+POSTGRES=`grep host api/db.yaml | cut -d: -f2` 
 
-echo "drop database offv;" | psql -h localhost -U offv postgres
-echo "create database offv;" | psql -h localhost -U offv postgres
+
+
+echo "drop database offv;" | psql -h $POSTGRES -U offv postgres
+echo "create database offv;" | psql -h $POSTGRES -U offv postgres
 
