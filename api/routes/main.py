@@ -17,7 +17,7 @@ def get_current_time():
     return {'time': time.time()}
 
 @main.route('/api/search/<term>')
-def get_search_result():
+def get_search_result(term):
     Result.query.all()
     return { 'results' : [ 
     { 'id' : 1, 'text' : 'AA' }, 
