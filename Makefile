@@ -28,14 +28,16 @@ test_frontend:
 run_frontend: build-frontend
 	cd frontend; npm run build
 
+build: env
+	cd frontend; npm install ; npm run build
+
 run_api:
 	env/bin/flask run
 
-build: build-frontend env
 
 
 package: build
-	tar cf release.tar.gz build/ 
+	tar cf release.tar.gz frontend/build/ 
 	tar rf release.tar.gz api/
 
 deploy: package
